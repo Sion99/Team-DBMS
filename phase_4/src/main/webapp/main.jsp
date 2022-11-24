@@ -51,15 +51,19 @@
 		out.println("</form>");
 	}
 	else if(Action.equals("Delete")){
-		out.println("<p>Delete From "+db_name+" Where</p>");
 		out.println("<form method='POST' action='delete.jsp'>");
-		System.out.println("hi");
+		out.println("<p>Delete From "+db_name+" Where</p>");
 		out.println("<input type='hidden' name='Table' value='"+db_name+"'/>");
 		out.println("<input type='text' name='where_action'><br>");
 		out.println("<input type='reset' value='Reset'><input type='submit' value='Submit'>");
 		out.println("</form>");
 	}
-	else if(Action.equals("Insert")){
+	else if(Action.equals("Update")){
+		out.println("<form method='POST' action='update.jsp'>");
+		out.println("<p>Update "+db_name+" Set <input type='text' name='set_action'> Where <input type='text' name='where_action'><br>");
+		out.println("<input type='hidden' name='Table' value='"+db_name+"'/>");
+		out.println("<input type='reset' value='Reset'><input type='submit' value='Submit'></p>");
+		out.println("</form>");
 		
 	}
 %>
