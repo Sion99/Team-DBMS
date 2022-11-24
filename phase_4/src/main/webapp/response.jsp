@@ -13,8 +13,8 @@
 	String serverIP = "localhost";
 	String strSID = "orcl";
 	String portNum = "1521";
-	String user = "university";
-	String pass = "comp322";
+	String user = "dbms";
+	String pass = "1212";
 	String url = "jdbc:oracle:thin:@"+serverIP+":"+portNum+":"+strSID;
 	Connection conn = null;
 	String query;

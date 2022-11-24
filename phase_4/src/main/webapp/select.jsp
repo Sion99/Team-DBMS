@@ -10,7 +10,13 @@
         </head>
 
         <body>
-            <% String number="5" ; /* String number=request.getParameter("number"); */ if(number.equals("1")){
+        
+		<form method='POST' action='view.html'>
+		<input type='submit' value='Go back'>
+		</form>
+            <%  
+            String number=request.getParameter("action_no");  
+            if(number.equals("1")){
                 out.println("<form method='POST' action='sresponse.jsp'>");
                 out.println("<h3>Query 1. Search for academy workers satisfying the following conditions:</h3>");
                 out.println("Salary more than:");
@@ -20,8 +26,7 @@
                 }
                 else if(number.equals("2")){
                 out.println("<form method='POST' action='sresponse.jsp'>");
-                    out.println("<h3>Query 2. Search for average salary of academy workers satisfying the following
-                        conditions:</h3>");
+                    out.println("<h3>Query 2. Search for average salary of academy workers satisfying the following conditions:</h3>");
                     out.println("Who works on academy which is member of institute:");
                     out.println("<select name='insname1'>");
                         out.println("<option value='IEEE'>IEEE</option>");
@@ -86,8 +91,7 @@
                 }
                 else if(number.equals("7")){
                 out.println("<form method='POST' action='sresponse.jsp'>");
-                    out.println("<h3>Query 7. Search for total salary of academy satisfying the following condition:
-                    </h3>");
+                    out.println("<h3>Query 7. Search for total salary of academy satisfying the following condition:</h3>");
                     out.println("where academy name includes: ");
                     out.println("<input type='text' name='academyname'>");
                     out.println("<input type='reset' value='Reset'><input type='submit' value='Submit'>");

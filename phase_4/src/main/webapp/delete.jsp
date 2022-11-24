@@ -9,6 +9,10 @@
 <title>Lab #9 Response</title>
 </head>
 <body>
+
+<form method='POST' action='view.html'>
+<input type='submit' value='Go back'>
+</form>
 <% 
 	String serverIP = "localhost";
 	String strSID = "orcl";
@@ -38,10 +42,10 @@
 			out.println("<p>No matching data to delete</p>");
 		else
 			out.println(count[0] + "<p> row successfully deleted.</p>");
-		conn.commit();
 	} catch (SQLException e) {
-		out.println("<p>Query is not correct. Please try again.\n</p>");
+		out.println("<p>Query is not correct. Please try again.</p>");
 	}
+	
 	
 %>
 
