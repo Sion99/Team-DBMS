@@ -18,8 +18,7 @@
 	String url = "jdbc:oracle:thin:@"+serverIP+":"+portNum+":"+strSID;
 	/* System.out.println(url); */
 	Connection conn = null;
-	PreparedStatement pstmt = null;
-	ResultSet rs;
+	Statement pstmt;
 	Class.forName("oracle.jdbc.driver.OracleDriver");
 	conn = DriverManager.getConnection(url,user,pass);
 %>
@@ -31,13 +30,18 @@
 	String Table = request.getParameter("Table");
 	String where_action = request.getParameter("where_action");
 	String sql = "DELETE FROM " + Table + " WHERE "+ where_action;
-	pstmt.addBatch(sql);
-	int [] count = pstmt.executeBatch();
-	if(count[0]==0)
-		System.out.println("No matching data to delete");
-	else
-		System.out.println(count[0] + " row successfully deleted.");
-	conn.commit();
+	pstmt = conn.createStatement();
+	try {
+		pstmt.addBatch(sql);
+		int[] count = pstmt.executeBatch();
+		if (count[0] == 0)
+			out.println("<p>No matching data to delete</p>");
+		else
+			out.println(count[0] + "<p> row successfully deleted.</p>");
+		conn.commit();
+	} catch (SQLException e) {
+		out.println("<p>Query is not correct. Please try again.\n</p>");
+	}
 	
 %>
 
