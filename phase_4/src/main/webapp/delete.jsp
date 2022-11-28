@@ -45,7 +45,9 @@
 	} catch (SQLException e) {
 		out.println("<p>Query is not correct. Please try again.</p>");
 	}
+	
+	
 %>
-<input type="button" value="go back" onclick="history.back()" />
+
 </body>
 </html>
