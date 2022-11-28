@@ -66,10 +66,82 @@
 		out.println("</form>");
 	}
 	else{
-		
-				
-		
-		
+		out.println("<form method='POST' action='insert.jsp'>");
+		switch (db_name) {
+		case "Subscriber":
+			out.println("<p>Insert into "+db_name+".</p>");
+			out.println("<p>Subscriber id(10000~20000): <input type='text' name='subscriber_id'><br>"
+					+"Starting date(yyyy-mm-dd): <input type='date' name='starting_date' value='2000-01-01'><br>"
+					+"Validation date(yyyy-mm-dd): <input type='date' name='validation_due' value='2000-01-01'><br>"
+					+"Subscriber type: <select name = 'subscriber_type'><option value='individual'>individual</option>"
+					+"<option value='isntitution'>isntitution</option></select><br>"
+					+"Name: <input type='text' name='name'><br></p>");
+			break;
+		case "Rating":
+			out.println("<p>Insert into "+db_name+".</p>");
+			out.println("<p>Subscriber id(10000~20000): <input type='text' name='sub_id'><br>"
+					+"Journal id(30000~40000): <input type='text' name='j_id'><br>"
+					+"Written date(yyyy-mm-dd): <input type='date' name='written_date' value='2000-01-01'><br>"
+					+"Star: <select name = 'subscriber_type'><option value='1'>1</option><option value='2'>2</option>"
+					+"<option value='3'>3</option><option value='4'>4</option><option value='5'>5</option></select><br></p>");
+			break;
+		case "Journal":
+			out.println("<p>Insert into "+db_name+".</p>");
+			out.println("<p>Journal id(30000~40000): <input type='text' name='j_id'><br>"
+					+"Title: <input type='text' name='title'><br>"
+					+"Views: <input type='text' name='views'><br>"
+					+"Cited by: <input type='text' name='cited_by'><br>"
+					+"Volume number: <input type='text' name='vol_num'><br>"
+					+"Academy name: <input type='text' name='aca_name'><br>"
+					+"Publication date(yyyy-mm-dd): <input type='date' name='publication_date' value='2000-01-01'><br>"
+					+"Open to: <select name = 'open_to'><option value='subscriber_only'>subscriber only</option>"
+					+"<option value='public'>public</option></select><br></p>");
+			break;	
+		case "Review":
+			out.println("<p>Insert into "+db_name+".</p>");
+			out.println("<p>Review id(60000~70000): <input type='text' name='unique_review_id'><br>"
+					+"Journal id(30000~40000): <input type='text' name='j_id'><br>"
+					+"Author id(50000~60000): <input type='text' name='a_id'><br>"
+					+"Review text: <input type='text' name='review_text'><br>"
+					+"Review date(yyyy-mm-dd): <input type='date' name='review_date' value='2000-01-01'><br></p>");
+			break;	
+		case "Author":
+			out.println("<p>Insert into "+db_name+".</p>");
+			out.println("<p>Author id(50000~60000): <input type='text' name='unique_author_id'><br>"
+					+"First name: <input type='text' name='F_name'><br>"
+					+"Last name: <input type='text' name='L_name'><br></p>");
+			break;	
+		case "Academyworker":
+			out.println("<p>Insert into "+db_name+".</p>");
+			out.println("<p>Worker id(40000~50000): <input type='text' name='unique_worker_id'><br>"
+					+"First name: <input type='text' name='F_name'><br>"
+					+"Last name: <input type='text' name='L_name'><br>"
+					+"Academy name: <input type='text' name='aca_name'><br>"
+					+"Department: <select name = 'department'><option value='Contract'>Contract</option>"
+					+"<option value='Sales'>Sales</option><option value='Publisher'>Publisher</option>"
+					+"<option value='Web Management'>Web Management</option><option value='Marketing'>Marketing</option>"
+					+"<option value='Financial'>Financial</option></select><br>"
+					+"Salary: <input type='text' name='salary'><br></p>");
+			break;	
+		case "Institute":
+			out.println("<p>Insert into "+db_name+".</p>");
+			out.println("<p>Institute name: <input type='text' name='Institute_name'><br></p>");
+			break;	
+		case "Academy":
+			out.println("<p>Insert into "+db_name+".</p>");
+			out.println("<p>Academy name: <input type='text' name='aca_name'><br>"
+					+"Institution name: <select name = 'ins_name'><option value='IEEE'>IEEE</option>"
+					+"<option value='acm'>acm</option><option value='elsevier'>elsevier</option>"
+					+"<option value='springer'>springer</option><option value='mdpi'>mdpi</option>"
+					+"<option value='oxford'>oxford</option></option></select><br>"
+					+"Academy foundation date(yyyy-mm-dd): <input type='date' name='academy_foundation_date' value='2000-01-01'><br></p>");
+			break;	
+		default:
+			break;
+		}
+		out.println("<input type='hidden' name='Table' value='"+db_name+"'/>");
+		out.println("<input type='reset' value='Reset'><input type='submit' value='Submit'></p>");
+		out.println("</form>");
 		
 	}
 %>
