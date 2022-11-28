@@ -9,9 +9,11 @@
 <title>Lab #9 Response</title>
 </head>
 <body>
+
+<input type="button" value="Go back" onclick="history.back()" />
 <% 
 	String serverIP = "localhost";
-	String strSID = "xe";
+	String strSID = "orcl";
 	String portNum = "1521";
 	String user = "dbms";
 	String pass = "1212";

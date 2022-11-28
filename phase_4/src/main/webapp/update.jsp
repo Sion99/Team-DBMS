@@ -9,6 +9,8 @@
 <title>Lab #9 Response</title>
 </head>
 <body>
+
+<input type="button" value="Go back" onclick="history.back()" />
 <% 
 	String serverIP = "localhost";
 	String strSID = "orcl";
@@ -27,8 +29,8 @@
 <%	
 	String input = "";
 	String Table = request.getParameter("Table");
-	String update_action1 = request.getParameter("update_action1");
-	String update_action2 = request.getParameter("update_action2");
+	String update_action1 = request.getParameter("set_action");
+	String update_action2 = request.getParameter("where_action");
 	String sql = "UPDATE " + Table + " SET "+ update_action1+ " WHERE "+ update_action2;
 	pstmt = conn.createStatement();
 	try {
@@ -39,6 +41,5 @@
 	}
 	
 %>
-<input type="button" value="Go back" onclick="history.back()" />
 </body>
 </html>

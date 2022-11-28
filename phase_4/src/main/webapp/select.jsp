@@ -9,9 +9,10 @@
 <title>Phase4 Select</title>
 </head>
 <body>
+
+<input type="button" value="Go back" onclick="history.back()" />
 <% 
-	String number = "10";
-	/* String number = request.getParameter("number"); */
+	String number = request.getParameter("action_no"); 
 	if(number.equals("1")){
 		out.println("<form method='POST' action='sresponse.jsp'>");
 		out.println("<input type='hidden' name='number' value='1'>");

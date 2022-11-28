@@ -64,6 +64,12 @@
 		out.println("<input type='hidden' name='Table' value='"+db_name+"'/>");
 		out.println("<input type='reset' value='Reset'><input type='submit' value='Submit'></p>");
 		out.println("</form>");
+	}
+	else{
+		
+				
+		
+		
 		
 	}
 %>
