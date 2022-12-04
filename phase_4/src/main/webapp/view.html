@@ -802,6 +802,27 @@
 			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 		}
 		
+		.pl{
+		    width: 100px;
+		    border: 1px solid #C4C4C4;
+		    box-sizing: border-box;
+		    border-radius: 10px;
+		    padding: 12px 13px;
+		    font-family: 'Roboto';
+		    font-style: normal;
+		    font-weight: 400;
+		    font-size: 14px;
+		    line-height: 16px;
+		}
+		
+		.pl:focus{
+		    border: 1px solid #0c0c0d;
+		    box-sizing: border-box;
+		    border-radius: 10px;
+		    outline: 1px solid #0c0c0d;
+		    border-radius: 10px;
+		}
+				
 		header {
 			height: 230px;
 		}
@@ -813,13 +834,16 @@
 			<h1 class="page-title"> 🛠️ 관리자 페이지에 오신 것을 환영합니다 </h1>
 		</header>
         <form method="POST" action="main.jsp">
-	    <h2>작업을 선택하십시오. <select name = "Action">
+	    <h2>작업을 선택하십시오. <select name = "Action"class= "pl">
+	    <option disabled selected></option>
 	    <option value="Insert">Insert</option>
 	    <option value="Update">Update</option>
 	    <option value="Delete">Delete</option>
 	    <option value="Select">Select</option>
-	    </select></h2>
-	    <h2>접근을 희망하는 DB를 선택하십시오. <select name = "db_name">
+	    </select>
+	    </h2>
+	    <h2>접근을 희망하는 DB를 선택하십시오.<select name ="db_name" class= "pl">
+	    <option disabled selected></option>
 	    <option value="Subscriber">Subscriber</option>
 	    <option value="Rating">Rating</option>
 	    <option value="Journal">Journal</option>
@@ -829,6 +853,7 @@
 	    <option value="Institute">Institute</option>
 	    <option value="Academy">Academy</option>
 	    </select></h2>          
+	    </div>
 <input type="reset" value="Reset"> <input type="submit" value="Submit">
         </form>
     </body>
