@@ -812,12 +812,11 @@
 <body>
 		<header><img class="page-cover-image" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&section=header&text=Team DBMS&fontSize=50"
 				style="object-position:center 70%" />
-			<h1 class="page-title">🔍 Welcome to Search Page</h1>
+			<h1 class="page-title">🔍 검색 페이지</h1>
 		</header>
 		<form method='POST' action='sresponse.jsp'>
 		<%
-		String number = "5";
-		/* String number = request.getParameter("number"); */
+		String number = request.getParameter("number");
 		if(number.equals("1")){
 			out.println("<input type='hidden' name='number' value='1'>");
 			out.println("<h2>Query 1. Academy Worker 탐색 </h2>");
@@ -908,17 +907,15 @@
 		}
 		else {
 			out.println("<input type='hidden' name='number' value='10'>");
-			out.println("<h2>Query 10. 일하는 부서에 따른 Academy Worker 검 </h2>");
-			out.println(" 근무부서가 ");
-			out.println("<select name='dname1'>");
+			out.println("<h2>Query 10. 일하는 부서에 따른 Academy Worker 검색  </h2>");
+			out.println("근무부서가 <select name='dname1'>");
 			out.println("<option value='Contract'>Contract</option>");
 			out.println("<option value='Sales'>Sales</option>");
 			out.println("<option value='Publisher'>Publisher</option>");
 			out.println("<option value='Web Management'>Web Management</option>");
 			out.println("<option value='Marketing'>Marketing</option>");
 			out.println("<option value='Financial'>Financial</option>");
-			out.println("</select>");
-			out.println(" 인 경우 <br>");
+			out.println("</select> 인 경우 ");
 		}
 		%>
 		<br> <select name="load">
@@ -926,6 +923,7 @@
 		<option value='10'>10</option>
 		<option value='15'>15</option>
 		<option value='20'>20</option>
+		<option value='1000'>최대</option>
 		</select> 만큼 불러오기        <input type='reset' value='초기화'>   <input type='submit' value='검색'>
 		</form><button onclick="history.back()"> 뒤로가기 </button>
 	
