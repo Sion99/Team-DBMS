@@ -814,12 +814,12 @@
 <body>
 	<header><img class="page-cover-image" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&section=header&text=Team DBMS&fontSize=50"
 				style="object-position:center 70%" />
-			<h1 class="page-title">📋Update Result <h1>
+			<h1 class="page-title">📋 수정 결과  </h1>
 	</header>
 	
 <% 
 	String serverIP = "localhost";
-	String strSID = "orcl";
+	String strSID = "xe";
 	String portNum = "1521";
 	String user = "dbms";
 	String pass = "1212";
@@ -839,9 +839,9 @@
 	pstmt = conn.createStatement();
 	try {
 		int res = pstmt.executeUpdate(sql);
-		out.println(res + " <p>row updated.</p>");
+		out.println("<h2>✅ "+res+"행이 수정되었습니다.</h2>");
 	} catch (SQLException e) {
-		out.println("<p>Input is not correct. Please try again.\n</p>");
+		out.println("<h2>입력값이 올바르지 않습니다. 다시 입력해주세요.</h2>");
 	}
 	
 %><button onclick="history.back()"> 뒤로가기 </button>
