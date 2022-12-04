@@ -814,13 +814,13 @@
 <body>
 	<header><img class="page-cover-image" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&section=header&text=Team DBMS&fontSize=50"
 				style="object-position:center 70%" />
-			<h1 class="page-title">📋Delete Result <h1>
+			<h1 class="page-title">📋 삭제 결과 </h1>
 	</header>
 <form method='POST' action='view.html'>
 </form>
 <% 
 	String serverIP = "localhost";
-	String strSID = "orcl";
+	String strSID = "xe";
 	String portNum = "1521";
 	String user = "dbms";
 	String pass = "1212";
@@ -842,11 +842,11 @@
 		pstmt.addBatch(sql);
 		int[] count = pstmt.executeBatch();
 		if (count[0] == 0)
-			out.println("<p>No matching data to delete</p>");
+			out.println("<h2>삭제할 값을 찾지 못했습니다.</h2>");
 		else
-			out.println(count[0] + "<p> row successfully deleted.</p>");
+			out.println("<h2>✅ "+count[0]+"행이 성공적으로 삭제되었습니다.</h2>");
 	} catch (SQLException e) {
-		out.println("<p>Query is not correct. Please try again.</p>");
+		out.println("<h2>입력값이 올바르지 않습니다. 다시 입력해주세요.</h2>");
 	}
 	
 	
