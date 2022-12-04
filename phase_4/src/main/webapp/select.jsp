@@ -924,7 +924,7 @@
 		<option value='15'>15</option>
 		<option value='20'>20</option>
 		<option value='1000'>최대</option>
-		</select> 만큼 불러오기        <input type='reset' value='초기화'>   <input type='submit' value='검색'>
+		</select> 만큼 불러오기        <input type='reset' value='초기화'> <input type='submit' value='검색'>
 		</form><button onclick="history.back()"> 뒤로가기 </button>
 	
 </body>
