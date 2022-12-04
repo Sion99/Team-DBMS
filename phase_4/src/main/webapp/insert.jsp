@@ -1,13 +1,10 @@
-
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-
 <!-- import JDBC package -->
 <%@ page language="java" import="java.text.*, java.sql.*" %>
 <!DOCTYPE html>
 <html>
 <head>
-
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Insert Result</title>
 	<style>
@@ -832,7 +829,6 @@
 	Class.forName("oracle.jdbc.driver.OracleDriver");
 	conn = DriverManager.getConnection(url,user,pass);
 %>
-
 <%	
 	boolean incorrect = true;
 	String input = "";
@@ -893,7 +889,7 @@
 		department = request.getParameter("department");
 		aca_name = request.getParameter("aca_name");
 		salary = request.getParameter("salary");
-		sql+=unique_worker_id + ",'" + F_name + "','" + L_name+ "','" + department + "','" + aca_name + "," + salary + ")";
+		sql+=unique_worker_id + ",'" + F_name + "','" + L_name+ "','" + department + "','" + aca_name + "'," + salary + ")";
 		break;	
 	case "Institute":
 		out.println("<p>Institute name: <input type='text' name='Institute_name'><br></p>");
@@ -911,7 +907,6 @@
 		break;
 	}
 	try {
-
 		out.println("<h2>다음의 SQL문이 수행됩니다.</h2>");
 		out.println("<p>"+sql+"</p>");
 		pstmt.executeUpdate(sql);
@@ -919,13 +914,10 @@
 		out.println("<h2>✅ 데이터가 성공적으로 추가되었습니다.</h2>");
 	} catch (SQLException e) {
 		out.println("<h2>입력값이 올바르지 않습니다. 다시 입력해주세요.</h2>");
-
 	}
 	
 	
 %>
-
 <button onclick="history.back()"> 뒤로가기 </button>
-
 </body>
 </html>
