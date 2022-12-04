@@ -865,7 +865,7 @@
 		out.println("<option value='9'>(9) Search by two keywords</option>");
 		out.println("<option value='10'>(10) Search by department</option>");
 		out.println("</select>");
-		out.println("<input type='submit' value='Submit'>");
+		out.println("<input type='submit' value='확인'>");
 		out.println("</form>");
 	}
 	else if(Action.equals("Delete")){
